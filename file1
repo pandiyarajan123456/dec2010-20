@@ -1,0 +1,22 @@
+
+What is Git?
+Git is an open-source, distributed version control system (VCS), which has a remote repository on the server-side and a local repository on the client-side.
+This means that the file or code is not present in a central server,but there is a copy of the file stored on the client’s computer. 
+A distributed version control system enables multiple developers to work in parallel with each other without any code conflicts. 
+Git enables developers to revert and go back to an older version of the code whenever necessary. 
+
+Git helps both developers and non-tech professionals by keeping track of their project files. It makes it easier 
+for multiple individuals to work together, and it plays an extremely significant role in big projects that 
+involve large teams.
+
+8.How will you confirm that you have  updated code in your local?
+I'll check Git--version command. if i dont see a supported verson of git, 
+wil need to either upgrade git or perform a fresh install.
+
+How i'll decide which code should be moved to production if conflict occurs?
+There are a few steps that could reduce the steps needed to resolve merge conflicts in Git.
+
+The easiest way to resolve a conflicted file is to open it and make any necessary changes
+After editing the file, we can use the git add a command to stage the new merged content
+The final step is to create a new commit with the help of the git commit command
+Git will create a new merge commit to finalize the merge.
