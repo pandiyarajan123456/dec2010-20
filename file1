@@ -34,6 +34,82 @@ you have diverged from the central repo’s master branch, which will cause issu
 You need to do two things to fix it:
 
 move your commit to a new branch
+Git vs SVN
+GIT	SVN
+Git is open source distributed vice control system developed by Linus Torvalds in 2005.| It emphasis on speed and data integrity	Apache Subversion is an open source software version and revision control system under Apache license.
+Git has a Distributed Model.|	SVN has a Centralized Model.
+In git every user has their own copy of code on their local like their own branch.|	In SVN there is central repository has working copy that also make changes and committed in central repository.
+In git we do not required any Network to perform git operation. | 	In SVN we required Network for runs the SVN operation. 
+Git is more difficult to learn. It has more concepts and commands. |	SVN is much easier to learn as compared to git.
+Git deals with large number of files like binary files that change quickly that why it become slow.|	SVN control the large number of binary files easily.
+In git we create only .git directory.|	In SVN we create .svn directory in each folder.
+It does not have good UI as compared to SVN.|	SVN has simple and better user interface .
+
+Features of GIT:
+
+Distributed System.
+Branching.
+Compatibility.
+Non-linear Development.
+Lightweight.
+Open source.
+
+Features of SVN:
+
+Directories are versioned
+Copying, deleting, and renaming.
+Free-form versioned metadata .
+Atomic commits.
+Branching and tagging.
+Merge tracking.
+File locking.
+
+What is distributed versions control system?
+A distributed version control system (DVCS) brings a local copy of the complete 
+repository to every team member’s computer, so they can commit, branch, and merge locally. 
+The server doesn’t have to store a physical file for each branch — it just needs the differences between each commit.
+Benefits:
+Reliable backup copies
+Fast merging and flexible branching
+rabid feedback and fewer merge conflicts
+flexibility to work offline
+
+Merge															Rebase
+
+Merge lets you merge different Git branches. 				Rebase allows you to integrate the changes from one branch into another.
+
+
+
+Merge logs show you the complete history of commit merging.		Rebase logs are linear. As the commits are rebased, the history is altered to reflect this.
+
+
+
+All the commits on a feature branch are combined into 			All commits are rebased, and the same number of commits are added to the master branch.
+
+a single commit on the master branch.
+
+
+Merge is best used when the target branch is supposed to be shared. Rebase is best used when the target branch is private.
+
+
+
+Merge preserves history								Rebase rewrites history.
+
+Git status vs git diff
+
+The main difference between the commands is that git diff is specially aimed at comparisons,It can compare commits, branches, 
+a single file across revisions or branches, etc. On the other hand, git status is specifically for the status of the working tree
+
+
+How to fix broken commit
+Use commit --amend
+Either some information isn’t filled out, the commit message is wrong, or something else is just messed up,we can use.
+
+Feature branching in GIT
+
+The core idea behind the Feature Branch Workflow is that all feature development should take place
+in a dedicated branch instead of the main branch. This encapsulation makes it easy for multiple 
+developers to work on a particular feature without disturbing the main codebase.
 restore your master to it’s previous state
 This can be done in 3 simple steps.
 first: we create new branch as name of feature.
