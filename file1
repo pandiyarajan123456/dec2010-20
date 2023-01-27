@@ -1,22 +1,48 @@
+10.Git rebase Vs Git merge
+Merge
+Rebase
+Merge lets you merge different Git branches.
 
-What is Git?
-Git is an open-source, distributed version control system (VCS), which has a remote repository on the server-side and a local repository on the client-side.
-This means that the file or code is not present in a central server,but there is a copy of the file stored on the client’s computer. 
-A distributed version control system enables multiple developers to work in parallel with each other without any code conflicts. 
-Git enables developers to revert and go back to an older version of the code whenever necessary. 
+Rebase allows you to integrate the changes from one branch into another.
 
-Git helps both developers and non-tech professionals by keeping track of their project files. It makes it easier 
-for multiple individuals to work together, and it plays an extremely significant role in big projects that 
-involve large teams.
+Merge logs show you the complete history of commit merging.
 
-8.How will you confirm that you have  updated code in your local?
-I'll check Git--version command. if i dont see a supported verson of git, 
-wil need to either upgrade git or perform a fresh install.
+Rebase logs are linear. As the commits are rebased, the history is altered to reflect this.
 
-How i'll decide which code should be moved to production if conflict occurs?
-There are a few steps that could reduce the steps needed to resolve merge conflicts in Git.
+All the commits on a feature branch are combined into a single commit on the master branch.
 
-The easiest way to resolve a conflicted file is to open it and make any necessary changes
-After editing the file, we can use the git add a command to stage the new merged content
-The final step is to create a new commit with the help of the git commit command
-Git will create a new merge commit to finalize the merge.
+All commits are rebased, and the same number of commits are added to the master branch.
+
+Merge is best used when the target branch is supposed to be shared.
+
+Rebase is best used when the target branch is private.
+
+Merge preserves history.
+
+Rebase rewrites history.
+
+how will you know in git if a branch has already been merged into master?
+To know if a branch is already merged into the master, first, open the Git repository and try to merge the branch.
+As a result, either the “Already up to date” message will appear, which means the branch is already 
+merged into the master. You can also view a graph to view branches merged into the master.
+
+You accidentally committed on the master branch instead of feature. Describe the process of correcting this mistake?
+So, you have two problems:
+
+you can’t publish your work, because the server will reject a push to master
+you have diverged from the central repo’s master branch, which will cause issues the next time you try to pull
+You need to do two things to fix it:
+
+move your commit to a new branch
+restore your master to it’s previous state
+This can be done in 3 simple steps.
+first: we create new branch as name of feature.
+Second:git reset --soft origin/master
+Third: Git checkout feature
+
+How can you undo a commit that has already been pushed to a shared branch on a remote repository?
+first:correcth the mistake in new commit.Simply remove or fix the bad file in a new commit and push it to the remote repository. 
+This is the most natural way to fix an error, always safe and totally non-destructive, and how you should do it 99% of the time. 
+SEcond:Revert the full commit Git revert with commit id.
+	
+you have accidentally deleted a branch. Is there any way to recover it and bring it back?
